@@ -1,9 +1,5 @@
 <?php
 
-## Конфигурационные парамтеры
-$data_dir = 'input_data';
-
-
 /**
  * @param string $dir
  * @return array
@@ -19,6 +15,5 @@ function getFileList(string $dir): array
         closedir($handle);
         return $img_list;
     }
-}
 
-#print_r(getFileList($data_dir));
+}
