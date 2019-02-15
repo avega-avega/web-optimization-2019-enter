@@ -11,11 +11,11 @@ $file_list = getFileList($data_dir);
 foreach ($file_list as $value) {
 
     $file_type = mime_content_type(realpath($value));
+    echo basename($value);
 
     if ($file_type === 'image/jpeg' || $file_type === 'image/png') {
         $green_pixel_count = 0;
 
-        echo basename($value);
 
         $img_properties = getImgProperties($value);
 
@@ -34,6 +34,8 @@ foreach ($file_list as $value) {
         }
 
         $green_pixel_count = 0;
+    } else {
+        echo " - это не картинка";
     }
 
 }
