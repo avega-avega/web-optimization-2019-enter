@@ -2,7 +2,11 @@
 ```$bash
 git clone git@github.com:avega-avega/web-optimization-2019-enter.git
 docker build -t php:7.2-alpine-gd .
-docker run -it --rm --name php-test-script -v "$PWD/web-optimization-2019-enter":/usr/src/myapp -w /usr/src/myapp php:7.2-alpine-gd index.php
+docker run -it  --rm --name php-test-script \
+                -v "$PWD/web-optimization-2019-enter":/usr/src/myapp \ 
+                -w /usr/src/myapp  \
+                 php:7.2-alpine-gd \
+                 index.php
 ```
 
 
