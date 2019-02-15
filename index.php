@@ -13,12 +13,11 @@ foreach ($file_list as $value) {
     $file_type = mime_content_type(realpath($value));
 
     if ($file_type === 'image/jpeg' || $file_type === 'image/png') {
+        $green_pixel_count = 0;
 
         echo basename($value);
 
         $img_properties = getImgProperties($value);
-
-        $green_pixel_count = 0;
 
         getGreenPixelCount( $value,
                             $file_type,

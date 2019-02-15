@@ -6,7 +6,10 @@
  * @param int $height
  * @return int
  */
-function getGreenPixelCount (string $image_path, string $file_type, int $width, int $height): int
+function getGreenPixelCount (string $image_path,
+                             string $file_type,
+                             int $width,
+                             int $height): int
 {
     global $green_pixel_count;
 
