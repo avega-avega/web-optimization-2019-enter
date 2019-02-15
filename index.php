@@ -35,7 +35,7 @@ foreach ($file_list as $value) {
 
         $green_pixel_count = 0;
     } else {
-        echo " - это не картинка\n";
+        echo " Недопустимый формат\n";
     }
 
 }
