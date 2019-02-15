@@ -17,6 +17,7 @@ function getGreenPixelCount (string $image_path, string $file_type, int $x, int 
         $image = @imagecreatefrompng($image_path);
     }
 
+    #TODO: Вынести чтение картники за пределы цикла перебора
     $rgb = imagecolorat($image, $x , $y);
     $colors = imagecolorsforindex ($image, $rgb);
 

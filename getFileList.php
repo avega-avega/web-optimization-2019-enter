@@ -14,6 +14,7 @@ function getFileList(string $dir): array
             }
         }
         closedir($handle);
+
         return $img_list;
     }
 
