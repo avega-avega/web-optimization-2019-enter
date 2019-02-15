@@ -18,4 +18,3 @@ function getFileList(string $dir): array
     }
 
 }
-print_r(getFileList('input_data'));
