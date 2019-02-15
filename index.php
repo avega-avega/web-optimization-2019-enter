@@ -19,11 +19,12 @@ foreach ($file_list as $value) {
         $img_properties = getImgProperties($value);
 
         $green_pixel_count = 0;
-        for ($x = 0; $x < $img_properties['width']; $x++) {
-            for ($y = 0; $y < $img_properties['height']; $y++) {
-                getGreenPixelCount($value, $file_type, $x, $y);
-            }
-        }
+
+        getGreenPixelCount( $value,
+                            $file_type,
+                            $img_properties['width'],
+                            $img_properties['height']
+                            );
 
         $green_pixel_ratio = ($green_pixel_count / $img_properties['pixels']);
 
@@ -38,4 +39,4 @@ foreach ($file_list as $value) {
 
 }
 
-echo 'Время выполнения скрипта: '.round(microtime(true) - $start, 4).' сек.'."\n";
+echo 'Время выполнения: '.round(microtime(true) - $start, 4).' сек.'."\n";

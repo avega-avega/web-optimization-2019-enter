@@ -1,13 +1,12 @@
 <?php
-
 /**
  * @param string $image_path
  * @param string $file_type
- * @param int $x
- * @param int $y
+ * @param int $width
+ * @param int $height
  * @return int
  */
-function getGreenPixelCount (string $image_path, string $file_type, int $x, int $y): int
+function getGreenPixelCount (string $image_path, string $file_type, int $width, int $height): int
 {
     global $green_pixel_count;
 
@@ -17,12 +16,16 @@ function getGreenPixelCount (string $image_path, string $file_type, int $x, int 
         $image = @imagecreatefrompng($image_path);
     }
 
-    #TODO: Вынести чтение картники за пределы цикла перебора
-    $rgb = imagecolorat($image, $x , $y);
-    $colors = imagecolorsforindex ($image, $rgb);
+    for ($x = 0; $x < $width; $x++) {
+        for ($y = 0; $y < $height; $y++) {
 
-    if ($colors['green'] > $colors['red'] && $colors['green'] > $colors['blue']) {
-        $green_pixel_count++;
+            $rgb = imagecolorat($image, $x , $y);
+            $colors = imagecolorsforindex ($image, $rgb);
+
+            if ($colors['green'] > $colors['red'] && $colors['green'] > $colors['blue']) {
+                $green_pixel_count++;
+            }
+        }
     }
     imagedestroy($image);
 
