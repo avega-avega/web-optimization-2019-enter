@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @param string $image_path
+ * @param string $file_type
+ * @param int $x
+ * @param int $y
+ * @return int
+ */
 function getGreenPixelCount (string $image_path, string $file_type, int $x, int $y): int
 {
     global $green_pixel_count;

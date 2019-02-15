@@ -10,6 +10,7 @@ function getFileList(string $dir): array
         while (false !== ($file = readdir($handle))) {
             if ($file !== '.' && $file !== '..') {
                 $img_list[] = realpath("$dir/$file");
+                asort($img_list);
             }
         }
         closedir($handle);
@@ -17,3 +18,4 @@ function getFileList(string $dir): array
     }
 
 }
+print_r(getFileList('input_data'));
