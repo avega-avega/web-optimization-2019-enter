@@ -22,10 +22,10 @@ class GreenImages
             while (false !== ($file = readdir($handle))) {
                 if ($file !== '.' && $file !== '..') {
                     $img_list[] = realpath("src/input_data"."/$file");
-
+                    asort($img_list);
                 }
             }
-            asort($img_list);
+//            asort($img_list);
             closedir($handle);
 
 //            print_r($img_list);

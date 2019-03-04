@@ -11,13 +11,15 @@ use Acme\GreenImages;
 class GreenImagesBench
 {
     /**
-     *@Revs(5)
+     *@Revs(1)
      *@Iterations(5)
      * @OutputTimeUnit("seconds")
      */
     public function benchGetFileList()
     {
+        ob_start();
         $test = new GreenImages();
         $test->getFileList();
+        ob_clean();
     }
 }
