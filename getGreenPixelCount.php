@@ -1,4 +1,7 @@
 <?php
+namespace Test;
+
+
 /**
  * @param string $image_path
  * @param string $file_type

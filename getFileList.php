@@ -1,5 +1,7 @@
 <?php
 
+namespace Test;
+
 /**
  * @param string $dir
  * @return array

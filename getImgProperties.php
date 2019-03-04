@@ -1,5 +1,5 @@
 <?php
-
+namespace Test;
 /**
  * @param string $image_path
  * @return array
