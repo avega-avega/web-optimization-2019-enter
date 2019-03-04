@@ -6,20 +6,21 @@
  * Time: 8:20 AM
  */
 
-use Acme\GreenImages;
+use Acme\Main;
 
-class GreenImagesBench
+
+class MainBench
 {
     /**
-     *@Revs(1)
-     *@Iterations(5)
+     * @Revs(5)
+     * @Iterations(5)
      * @OutputTimeUnit("seconds")
      */
-    public function benchGetFileList()
+    public function benchWhoGreener()
     {
         ob_start();
-        $test = new GreenImages();
-        $test->getFileList();
+        $test = new Main();
+        $test->whoGreener();
         ob_clean();
     }
 }
